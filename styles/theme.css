@@ -1,0 +1,42 @@
+:root {
+  /* Boje */
+  --color-bg-dark: #F2E9E4;
+  --color-bg-darker: #4A4E69;
+  --color-bg-card: #C9ADA7;
+
+  --color-bg-btn: #9A8C98;
+  --color-bg-backtotop: #4A4E69;
+
+  --color-text: #22223B;
+  --color-text-light: #9A8C98;
+  --color-text-dark: #111111;
+
+  --color-hover: #F2E9E4;
+  --color-hover-bg: rgba(34, 34, 59, 0.15);
+
+  --color-border: rgba(34, 34, 59, 0.25);
+
+  --color-progress-gradient-start: #22223B;
+  --color-progress-gradient-end: #C9ADA7;
+
+  /* Fontovi */
+  --font-main: 'Inter', sans-serif;
+  --font-logo: 'Poppins', sans-serif;
+
+  /* Velicine fontova */
+  --font-size-logo: 20px;
+  --font-size-heading: 34px;
+  --font-size-heading3: 18px;
+  --font-size-btn: 16px;
+  --font-size-btn-small: 14px;
+
+  /* Velicine, spacing */
+  --padding-container: 90%;
+  --max-width-container: 1100px;
+  --border-radius-card: 12px;
+  --border-radius-btn: 8px;
+  --border-radius-progress: 999px;
+  --gap-grid: 20px;
+  --gap-nav: 18px;
+  --gap-nav-mobile: 12px;
+}

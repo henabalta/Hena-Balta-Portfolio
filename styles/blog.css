@@ -1,0 +1,266 @@
+@import url(theme.css);
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg-dark);
+  line-height: 1.6; }
+
+.container { 
+  width: var(--padding-container); 
+  max-width: var(--max-width-container); 
+  margin: 0 auto; }
+.section { padding: 60px 0; }
+.dark-section { background: transparent; border-top: none; }
+
+/* HEADER / NAV */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(0deg, rgba(206,207,199,0.95), rgba(206,207,199,0.85));
+  backdrop-filter: blur(3px);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-nav);
+  padding: 14px 0;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: var(--font-size-logo);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+/* NAV LINKOVI (desktop) */
+.nav { margin-left: auto; }
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--gap-nav);
+  align-items: center;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: var(--border-radius-btn);
+}
+.nav a:hover {
+  background: var(--color-hover-bg);
+  color: var(--color-hover);
+}
+
+/* HAMBURGER MENI (mobilna verzija) */
+.nav-toggle { display: none; }
+.nav-icon {
+  display: none;
+  margin-left: auto;
+  cursor: pointer;
+  width: 28px;
+  height: 22px;
+  position: relative;
+}
+.nav-icon span {
+  display: block;
+  height: 3px;
+  background-color: var(--color-text);
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+/* NASLOV */
+.container.section.dark-section h2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  text-align: left;
+}
+
+/* BLOG KARTICE */
+.card.blog-card {
+  background-color: var(--color-bg-card);
+  padding: 20px;
+  border-radius: var(--border-radius-card);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+.card.blog-card:hover {
+  transform: translateY(-3px);
+  border: 1px solid var(--color-hover-bg);
+}
+.card.blog-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: var(--font-logo);
+}
+
+/* BLOG STILIRANJE */
+/* Osnovni card stil */
+.blog-article {
+  background-color: var(--color-bg-card);
+  padding: 24px;
+  border-radius: var(--border-radius-card);
+  margin-bottom: 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.2);
+}
+/* HEADER unutar članka */
+.blog-article header h1 {
+  font-family: var(--font-logo);
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: var(--color-text-dark);
+}
+.blog-article header p {
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+.blog-article header hr {
+  border: 0;
+  border-top: 2px solid var(--color-border);
+  margin: 10px 0 15px;
+}
+.blog-article .article-meta {
+  font-size: 14px;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+.blog-article .article-meta summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.blog-article .article-meta span {
+  display: block;
+  margin-left: 15px;
+}
+/* MAIN sadržaj */
+.blog-article main p {
+  line-height: 1.75;
+  margin-bottom: 16px;
+  color: var(--color-text);
+  text-align: justify;
+}
+/* FIGURE */
+.blog-article figure {
+  margin: 20px 0;
+  text-align: center;
+}
+.blog-article figure img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+.blog-article figcaption {
+  font-size: 14px;
+  color: var(--color-text);
+  margin-top: 6px;
+}
+/* READ MORE LINK */
+.blog-article a.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: var(--color-bg-btn);
+  color: #fff;
+  border-radius: var(--border-radius-btn);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-article a.read-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78,225,193,0.15);
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 26px 0;
+  text-align: center;
+  color: var(--color-text);
+  background-color: #d2d2cb;
+}
+.footer-inner p { margin: 5px 0; }
+.contact-info { margin-top: 10px; }
+.footer-divider {
+  border: none;
+  border-top: 2px solid #aaa;
+  margin: 15px auto;
+  width: 250px;
+}
+.social-links {
+  margin-top: 15px;
+}
+.social-links a {
+  margin: 0 10px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+.social-links a:hover {
+  color: #6600cc;
+  transform: scale(1.1);
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--color-bg-backtotop);
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: var(--border-radius-btn);
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.4);
+}
+
+/* RESPONZIVNOST */
+@media(max-width: 900px) {
+  .nav ul {
+    display: none;
+    background-color: #d2d2cb;
+    flex-direction: column;
+    gap: var(--gap-nav-mobile);
+    padding: 18px 12%;
+  }
+  .nav-icon { display: block; position: fixed; top: 16px; right: 40px; z-index: 1002; }
+  .about-wrapper { flex-direction: column; align-items: center; text-align: center; }
+  .about-image img { width: 60%; max-width: 300px; margin-bottom: 20px; }
+  .back-to-top { padding: 8px 10px; font-size: 14px; }
+  .card.blog-card { padding: 15px; }
+  .container.section.dark-section h2 { font-size: 1.7rem; }
+  .blog-article { padding: 18px; }
+  .blog-article header h1 { font-size: 20px; }
+  .blog-article header p { font-size: 15px; }
+  .blog-article main p { font-size: 15px; }
+}
+.nav-toggle:checked ~ .nav { 
+  position: fixed; 
+  top: 64px; 
+  left: 0; 
+  right: 0; 
+  z-index: 1001; }
+.nav-toggle:checked ~ .nav ul { display: flex; }

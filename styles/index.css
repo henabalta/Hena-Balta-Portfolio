@@ -1,0 +1,384 @@
+@import url(theme.css);
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, .site { height: 100%; }  /* Elementi zauzimaju punu visinu ekrana */
+  body {
+  font-family: var(--font-main);
+  background: var(--color-bg-dark);
+  color: var(--color-text);
+  line-height: 1.6;
+  }
+
+/* CONTAINER */
+.container {
+  width: var(--padding-container);
+  max-width: var(--max-width-container);  /* Maksimalna širina sadržaja */
+  margin: 0 auto;  /* Centriranje kontejnera horizontalno */
+}
+
+/* HEADER / NAV FIKSIRAN */
+.site-header {
+  position: fixed;  /* Header je fiksiran i ostaje na vrhu pri skrolanju */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;  /* Osigurava da header bude iznad ostalog sadržaja */
+  background: linear-gradient(0deg, rgba(206, 207, 199, 0.95), rgba(206, 207, 199, 0.85));  /* Gradijent pozadina headera */
+  backdrop-filter: blur(3px);  /* Blago zamućenje sadržaja ispod headera */
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 0;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: var(--font-size-logo);
+  text-decoration: none;   /* Uklanja podcrtavanje linka */
+  color: var(--color-text); /* Osigurava da boja ostane ista */
+}
+
+/* NAV LINKOVI (desktop) */
+.nav { margin-left: auto; }  /* Gura navigaciju skroz desno */
+.nav ul {
+  list-style: none;
+  display: flex;  /* Horizontalni raspored linkova */
+  gap: var(--gap-nav);
+  align-items: center;  /* Vertikalno poravnanje */
+}
+.nav a {
+  text-decoration: none;  /* Uklanja podcrtavanje linka */
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: var(--border-radius-btn);  /* Zaobljeni uglovi */
+}
+.nav a:hover {
+  background: var(--color-hover-bg);
+  color: var(--color-hover); 
+}
+
+/* HAMBURGER MENI (mobilna verzija) */
+.nav-toggle { display: none; }
+.nav-icon {
+  display: none;  /* Ikona se prikazuje samo na mobilnim ekranima */
+  margin-left: auto;
+  cursor: pointer;
+  width: 28px;
+  height: 22px;
+  position: relative;  /* Omogućava precizno pozicioniranje spanova */
+} 
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 150px 20px 120px; /* Prostor oko hero sekcije povećan zbog fiksnog nav-a */
+  background: linear-gradient(
+      180deg,
+      rgba(34, 34, 59, 0.9) 0%, 
+      rgba(153, 140, 152, 0.7) 50%, 
+      rgba(201, 173, 167, 0.5) 100% 
+    );
+  animation: fade-in 1s ease both;
+}
+.hero h1 {
+  font-family: var(--font-logo);
+  font-size: var(--font-size-heading);
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+.hero h3 { 
+  color: var(--color-text); 
+  margin-bottom: 20px; 
+  font-size: var(--font-size-heading3); }
+
+/* BUTTON */
+.btn {
+  background: var(--color-bg-btn);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: var(--border-radius-btn);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;  /* Omogućava padding i transform */
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover { 
+  transform: translateY(-3px);  /* Lagano podizanje dugmeta */
+  box-shadow: 0 6px 20px
+  rgba(78,225,193,0.12);  /* Sjena na hover */
+}
+.btn.small {
+  padding: 8px 12px;
+  font-size: var(--font-size-btn-small); 
+}
+
+/* AUDIO PLAYER */
+.audio-player {
+  margin: 40px 0;
+  text-align: center;
+}
+.audio-player h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--color-text); 
+}
+.audio-player audio {
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  border-radius: 10px;
+  background-color: #F1F3F4;
+}
+#audio-intro {
+  padding-bottom: 1px;
+}
+
+/* SEKCIJE */
+.section { padding: 60px 0; }  /* Razmak sekcija */
+.section .section-inner {
+  max-width: 900px;
+  margin: 0 auto; }  /* Centriranje */
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;  /* Poravnanje gore */
+  gap: 40px;  /* Razmak između slike i teksta */
+}
+.about-image img {
+  margin-top: 5px;
+  width: 300px; 
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;  /* Ispravno popunjavanje */
+}
+.about-text {
+  flex: 1; /* Tekst zauzima preostali prostor */
+}
+
+/* CARDS / GRID */
+.skills-grid {
+  display: grid;
+  gap: var(--gap-grid);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));  /* Responsive kolone */
+  margin-top: 20px;
+}
+.card {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius-card);
+  padding: 18px;
+  transition: transform .2s ease, border .2s ease;
+}
+.card:hover { 
+  transform: translateY(-6px); 
+  border: 1px solid var(--color-hover-bg); 
+}
+.skill-card h3 { 
+  font-family: var(--font-logo); 
+  margin-bottom: 8px; 
+}
+
+/* PROGRESS BAR */
+.progress {
+  margin-top: 14px;
+  height: 9px;
+  background: var(--color-border);
+  border-radius: var(--border-radius-progress);
+  overflow: hidden;  /* Sakriva višak */
+}
+.progress span {
+  display: block;
+  height: 100%;
+  width: 50%;  /* Popunjenost (skill level) */
+  background: linear-gradient(90deg, var(--color-progress-gradient-start), var(--color-progress-gradient-end));
+  border-radius: var(--border-radius-progress);
+}
+
+/* GALERIJA */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 9px;
+  margin-top: 16px;
+}
+.gallery-item {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  height: 330px;
+  object-fit: cover;  /* Prilagođavanje slike */
+  transition: transform .25s ease;
+}
+.gallery-item:hover { transform: scale(1.04); }  /* Blagi zoom */
+
+/* KONTAKT */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 10px;
+  border-radius: var(--border-radius-btn);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;  /* Može se rastezati samo vertikalno */
+}
+
+#about p {
+  text-align: justify;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 26px 0;
+  text-align: center;
+  color: var(--color-text);
+  background-color: #d2d2cb;
+}
+.footer-inner p {
+  margin: 5px 0;
+}
+.contact-info {
+  margin-top: 10px;
+}
+.footer-divider {
+  border: none;  /* Uklanja default liniju */
+  border-top: 2px solid #aaa;  /* Tanka linija */
+  margin: 15px auto;  /* Razmak gore/dolje i centrirano */
+  width: 250px; /* Širina linije */
+}
+.social-links {
+  margin-top: 15px;
+}
+.social-links a {
+  margin: 0 10px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+.social-links a:hover {
+  color: #6600cc;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--color-bg-backtotop);
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: var(--border-radius-btn);
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.4);
+}
+
+/* 404 ERROR PAGE */
+.error-page {
+  min-height: 100vh;  /* Puna visina ekrana */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-dark);
+  color: var(--color-text);
+}
+.error-container {
+  text-align: center;
+  padding: 40px;
+}
+.error-container h1 {
+  font-size: 6rem;
+  margin-bottom: 1px;
+}
+.error-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+.error-container p {
+  margin-bottom: 25px;
+  color: var(--color-text);
+}
+
+/* ANIMACIJE */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONZIVNOST: manji ekrani */
+@media(max-width: 900px) {
+.nav ul {
+  display: none;  /* Sakriva desktop meni */
+  background-color: #d2d2cb;
+  }
+.nav-icon {
+  display: block;  /* Prikazuje hamburger */
+  position: fixed; /* Fiksirano u viewportu */
+  top: 16px;
+  right: 40px;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1002;
+  }
+.about-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-image img {
+    width: 60%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  .about-text {
+    text-align: left;
+  }
+} 
+.nav-icon span {
+  display: block;
+  height: 3px;
+  background-color: var(--color-text);
+  margin: 5px 0;
+  border-radius: 3px;
+  }
+.social-links a {
+    margin: 0 5px;
+    font-size: 16px;
+  }
+
+.nav-toggle:checked ~ .nav {
+  position: fixed;  /* Meni fiksiran preko ekrana */
+  top: 64px;  /* Odmah ispod nav */
+  left: 0;
+  right: 0;
+  background: #d2d2cb;
+  padding: 18px 12%;
+  z-index: 1001;
+}
+.nav-toggle:checked ~ .nav ul {
+  display: flex;  /* Prikazuje meni */
+  flex-direction: column;
+  gap: var(--gap-nav-mobile);
+}
+
+.contact-inner { grid-template-columns: 1fr; }  /* Jedna kolona na mobilnom */
+.hero { padding: 120px 16px 80px; }  /* Manji padding na mobilnom */

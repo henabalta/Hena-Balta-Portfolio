@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Početna - Hena Balta</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="../images/favicon2.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/projekti.css">
+
+  <meta name="description" content="Hena Balta - Portfolio.">
+</head>
+<body>
+
+  <!-- SITE WRAPPER -->
+  <div class="site">
+
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="/index.html" class="logo">H E N A</a>
+
+        <!-- HAMBURGER MENI -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="/index.html#about">O meni</a></li>
+            <li><a href="/index.html#skills">Vještine</a></li>
+            <li><a href="../html/projekti.html#projects">Projekti</a></li>
+            <li><a href="../html/certifikati.html#cerificates">Certifikati</a></li>
+            <li><a href="../html/blog.html#blog">Blog</a></li>
+            <li><a href="/index.html#gallery">Galerija</a></li>
+            <li><a href="/index.html#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <h1>Hena Balta - portfolio</h1>
+        <h3>Kreiram pametne, sigurne i kreativne digitalne proizvode.</h3>
+        <a class="btn" href="#about">Saznaj više</a>
+        <a href="../docs/cv-template.pdf" download="Hena_Balta_CV.pdf" class="btn">Preuzmite moj CV!</a>
+      </div>
+    </section>
+
+    <!-- AUDIO INTRO -->
+    <section id="audio-intro" class="audio-player container section">
+      <audio controls>
+        <source src="../audio/bgm.mp3" type="audio/mpeg">
+          Vaš preglednik ne podržava audio element.
+      </audio>
+      <p>Slušajte dok scrollate : )</p>
+    </section>
+
+    <!-- O MENI -->
+    <section id="about" class="container section">
+      <div class="section-inner">
+        <h2>O meni</h2>
+        <div class="about-wrapper">
+          <div class="about-image">
+            <img src="../images/hena.jpg" alt="Hena">
+          </div>
+          <div class="about-text">
+            <p><strong>Zovem se Hena Balta i bavim se razvojem digitalnih rješenja koja spajaju više oblasti: 
+                mobilni razvoj, game development, vještačku inteligenciju, web dizajn i cyber sigurnost.</strong></p>
+
+            <p>Moja priča je počela još 2014. godine, kada sam se po prvi put srela sa programiranjem u 5. razredu osnovne
+                škole. Taj maleni korak otvorio mi je vrata u svijet tehnologije koji me i danas fascinira - posebno zbog 
+                načina na koji povezuje kreativnost, logiku i inovaciju. Svoje usavršavanje sam nastavila dalje kroz srednju školu,
+                tačnije Prvu gimnaziju u Sarajevu gdje sam već radila na jednom manjem projektu iz web programiranja, a zatim 
+                sam se odlučila i stručnije posvetiti tome kroz moj studij na Prirodno-matematičkom fakultetu u Sarajevu, 
+                smjer Informacione tehnologije. </p>
+
+            <p>Kroz godine sam istraživala prototipove video igara, UI/UX dizajn, mobilne aplikacije i AI sisteme 
+                koji uče iz ponašanja korisnika. Razvila sam i veliko interesovanje za cyber sigurnost jer želim 
+                da proizvodi koje pravim budu sigurni i odgovorno dizajnirani.</p>
+
+            <p><em>Danas, 2035. godine, radim na spoju game developmenta, umjetne inteligencije i mobilnog razvoja, 
+                uz poseban fokus na korisničko iskustvo i sigurnost. I dalje učim i eksperimentišem jer vjerujem da 
+                napredak nikada ne treba prestati.</em></p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- VJEŠTINE -->
+    <section id="skills" class="container section dark-section">
+        <h2>Vještine</h2>
+      <div class="skills-grid">
+        <div class="card skill-card">
+
+          <h3>Game development</h3>
+          <ul>
+            <p>Dizajn gameplay-a</p>
+            <p>UI za igre</p>
+            <p>Prototipovi u engine-ima</p>
+          </ul>
+          <div class="progress">
+            <span style="width:88%"></span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Mobile development</h3>
+          <ul>
+            <p>Mobilni UI/UX</p>
+            <p>Prototipovi</p>
+            <p>Mobile mini igre</p>
+          </ul>
+          <div class="progress">
+            <span style="width:70%"></span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Vještačka inteligencija</h3>
+          <ul>
+            <p>AI za NPC</p>
+            <p>Personalizacija</p>
+            <p>Generativni koncepti</p>
+          </ul>
+          <div class="progress">
+            <span style="width:75%"></span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Cyber sigurnost</h3>
+          <ul>
+            <p>Zaštita podataka</p>
+            <p>Anti-cheat principi</p>
+            <p>Sigurnost API-ja</p>
+          </ul>
+          <div class="progress">
+            <span style="width:70%"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIJA -->
+    <section id="gallery" class="container section">
+      <h2>Galerija</h2>
+      <div class="gallery-grid">
+        <img src="../images/slika1.jpg" alt="Random slika" class="gallery-item" />
+        <img src="../images/slika2.jpg" alt="Random slika" class="gallery-item" />
+        <img src="../images/slika3.jpg" alt="Random slika" class="gallery-item" />
+        <img src="../images/slika4.jpg" alt="Random slika" class="gallery-item" />
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="contact" class="container section dark-section">
+      <h2>Kontakt</h2>
+      <div class="contact-inner">
+        <form class="contact-form" onsubmit="return false;">
+          <label for="name">Ime</label>
+          <input id="name" type="text">
+
+          <label for="email">E-mail</label>
+          <input id="email" type="email">
+
+          <label for="message">Poruka</label>
+          <textarea id="message"></textarea>
+
+          <button class="btn" type="submit">Pošalji</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        
+        <div class="contact-info">
+          <p><strong>E-mail:</strong> hena.balta@gmail.com</p>
+          <p><strong>Lokacija:</strong> Sarajevo, BiH</p>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="social-links">
+          <p><strong>Pronađite me na društvenim mrežama!</strong></p>
+          <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+          <a href="https://twitter.com/" target="_blank">Twitter</a>
+          <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        </div>
+        
+        <hr class="footer-divider">
+        <h5>&copy; 2035 Hena Balta</h5>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#hero" class="back-to-top" aria-label="Back to top">↑</a>
+  </div>
+
+</body>
+</html>
